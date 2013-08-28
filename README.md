@@ -1,6 +1,6 @@
 
 
-Set of Chocolatey install packages
+Set of Chocolatey and Nuget install packages
 
-- Dev ( A pack of handy windows development tools )
+--- devset ( A pack of handy windows development tools )
 
