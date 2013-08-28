@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>SoftwareCreations.devset</id>
+    <title>SoftwareCreations.devset</title>
+    <version>0.07</version>
+    <authors>Orn Kristjansson</authors>
+    <summary>Software Creations, installs dev tools.</summary>
+    <owners>Orn Kristjansson</owners>
+    <description>Installs handy development tools.</description>
+    <projectUrl>https://github.com/ornatwork/</projectUrl>
+    <tags>SoftwareCreations devset tools development</tags>
+    <copyright>Software Creations</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://kristjansson.us/favicon.ico</iconUrl>
+    <dependencies>
+      <dependency id="fiddler" />
+      <dependency id="filezilla" />
+      <dependency id="winrar" />
+      <dependency id="sublime" />
+      <dependency id="gimp" />
+      <dependency id="dotpeek" />
+      <dependency id="grepwin" />
+      <dependency id="skype" />
+      <dependency id="testdriven.net" />
+      <dependency id="MagicDisc" />
+      <dependency id="winmerge" />
+      <dependency id="tortoisesvn" />
+      <dependency id="TortoiseGit" />
+    </dependencies>
+    <releaseNotes>
+    </releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="content\**" target="content" />
+  </files>
+</package>
