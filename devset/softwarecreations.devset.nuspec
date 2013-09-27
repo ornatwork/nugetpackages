@@ -3,7 +3,7 @@
   <metadata>
     <id>SoftwareCreations.devset</id>
     <title>SoftwareCreations.devset</title>
-    <version>0.09</version>
+    <version>0.10</version>
     <authors>Orn Kristjansson</authors>
     <summary>Software Creations, installs dev tools.</summary>
     <owners>Orn Kristjansson</owners>
@@ -28,6 +28,7 @@
       <dependency id="tortoisesvn" />
       <dependency id="TortoiseGit" />
       <dependency id="windowstelnet" />
+      <dependency id="curl" />
     </dependencies>
     <releaseNotes>
     </releaseNotes>
