@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>SoftwareCreations.devbox</id>
+    <title>SoftwareCreations.devbox</title>
+    <version>0.03</version>
+    <authors>Orn Kristjansson</authors>
+    <summary>Software Creations, installs dev tools using BoxStarter.</summary>
+    <owners>Orn Kristjansson</owners>
+    <description>Installs handy development tools using BoxStarter.</description>
+    <projectUrl>https://github.com/ornatwork/</projectUrl>
+    <tags>SoftwareCreations devbox tools development BoxStarter</tags>
+    <copyright>Software Creations</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://kristjansson.us/favicon.ico</iconUrl>
+    <dependencies>
+    </dependencies>
+    <releaseNotes>
+    </releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="content\**" target="content" />
+  </files>
+</package>

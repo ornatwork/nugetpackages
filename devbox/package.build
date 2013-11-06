@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<!-- Chocolatey fun -->
+<project name = "SoftwareCreations.devbox"
+		 default = "PackAndDeploy"
+		 basedir=".">
+
+  <!--  Register the sys.* properties; most specifically, sys.env.* for all environment vars   -->
+  <sysinfo failonerror="false" />
+
+  <!-- The version number for the package -->
+  <property name="version" value="0.01" dynamic="true" overwrite="true" />
+  <property name="BuildDrive" value="${string::substring(project::get-base-directory(), 0, 1)}"  dynamic="true" />
+  <property name="path.base.drive" value="${BuildDrive}:\" />
+  <property name="cmdChocolateyPath" value="${path.base.drive}\Chocolatey\bin\" />
+  <property name="cmdChocolatey" value="chocolatey.bat" />
+  <property name="nugetFile" value="softwarecreations.devbox" />
+
+
+  <!-- This is the main / default target -->
+  <target name="PackAndDeploy" depends="Start, UpdateVersion, Package, Deploy">
+    <echo message="Done !"/>
+  </target>
+
+
+  <!-- Individual targets below, those should NOT have any dependancies -->
+  <target name="Start" >
+    <echo message="*** Version number=${version} "/>
+
+  </target>
+
+
+  <!-- Update version number -->
+  <target name="UpdateVersion" description="Update version files to the current version being built."  >
+    
+    <echo message="*** Start updateVersions: ver=${version}"/>
+    
+    <!-- Update NuGet package version -->
+    <xmlpoke file="softwarecreations.devbox.nuspec" xpath="/package/metadata/version" value="${version}" />
+
+  </target>
+
+
+  <!-- Package -->
+  <target name="Package">
+    <echo message="Start Package:"/>
+
+    <echo message="Push to Nuget feed:"/>
+    <!-- Deploy to Nuget Gallery -->
+    <exec program="${cmdChocolateyPath}${cmdChocolatey}" verbose="true" 
+          commandline="pack ${nugetFile}.nuspec"/>
+    
+  </target>
+
+
+  <!-- Deploy -->
+  <target name="Deploy">
+    <echo message="Start Deploy:"/>
+    
+    <exec program="${cmdChocolateyPath}${cmdChocolatey}" verbose="true" 
+          commandline="push ${nugetFile}.${version}.nupkg"/>
+    
+  </target>
+
+</project>
