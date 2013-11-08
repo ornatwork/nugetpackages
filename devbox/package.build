@@ -12,9 +12,11 @@
   <property name="version" value="0.01" dynamic="true" overwrite="true" />
   <property name="BuildDrive" value="${string::substring(project::get-base-directory(), 0, 1)}"  dynamic="true" />
   <property name="path.base.drive" value="${BuildDrive}:\" />
+  <property name="nugetFile" value="softwarecreations.devbox" />
   <property name="cmdChocolateyPath" value="${path.base.drive}\Chocolatey\bin\" />
   <property name="cmdChocolatey" value="chocolatey.bat" />
-  <property name="nugetFile" value="softwarecreations.devbox" />
+  <property name="feedkey" value="b6a1925b-f8bc-43cb-b973-c782c908c3c8" />
+  <property name="packlocation" value="https://www.myget.org/F/b834f3e266014e79bf35d3a82e28ef5d/api/v2/package" />
 
 
   <!-- This is the main / default target -->
@@ -57,8 +59,8 @@
   <target name="Deploy">
     <echo message="Start Deploy:"/>
     
-    <exec program="${cmdChocolateyPath}${cmdChocolatey}" verbose="true" 
-          commandline="push ${nugetFile}.${version}.nupkg"/>
+    <exec program="nuget" verbose="true" 
+          commandline="push softwarecreations.devbox.${version}.nupkg ${feedkey} -Source ${packlocation} "/>
     
   </target>
 

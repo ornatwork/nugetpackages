@@ -12,14 +12,14 @@ Set-ExplorerOptions -showHidenFilesFoldersDrives -showProtectedOSFiles -showFile
 Enable-RemoteDesktop
 
 # Visual studio Express, can be updated with a license key
-cinstm VisualStudioExpress2012Web
+#cinstm VisualStudioExpress2012Web
 
 # Sql server Express, can be updated with a license key
-cinstm mssqlserver2012express
+#cinstm mssqlserver2012express
 
 # Eclipse for java dev
-cinstm eclipse-java-juno 
-if(Test-PendingReboot){Invoke-Reboot}
+#cinstm eclipse-java-juno 
+#if(Test-PendingReboot){Invoke-Reboot}
 
 # Other handy dev tools
 cinst SoftwareCreations.devset 
